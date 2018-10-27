@@ -1,0 +1,18 @@
+<h1>Choose a room</h1>
+
+<ul class="rooms">
+  <li *ngFor="let room of rooms" (click)="onSelect(room)" [class.selected]="room === selectedRoom">
+    <span class="badge">{{room.id}}</span> {{room.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedHero">
+  <h2>{{selectedRoom.name}} Details</h2>
+
+  <div><span>id: </span>{{selectedRoom.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedRoom.name" placeholder="name">
+    </label>
+  </div>
+</div>
